@@ -1,0 +1,34 @@
+### hello_mpi.pro ---
+## 
+## Author: Julien Wintz
+## Created: Tue Jul  2 10:52:44 2013 (+0200)
+## Version: 
+## Last-Updated: Tue Jul  2 10:56:11 2013 (+0200)
+##           By: Julien Wintz
+##     Update #: 11
+######################################################################
+## 
+### Change Log:
+## 
+######################################################################
+
+TEMPLATE = app
+TARGET = hello_mpi
+DEPENDPATH += .
+#INCLUDEPATH += . /usr/include/ # add include path here to find the header
+#LIBS += -L/usr/lib -lmpi     # add library and path here in the link stage
+QMAKE_CC = mpicc.openmpi               # replace gcc with mpicc
+QMAKE_LINK = mpicc.openmpi             # change the linker, if not set it is g++
+
+
+## ###################################################################
+## Configuration
+## ###################################################################
+
+macx:CONFIG -= app_bundle
+
+## ###################################################################
+## Input
+## ###################################################################
+
+SOURCES += hello_mpi.c
